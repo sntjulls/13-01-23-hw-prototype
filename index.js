@@ -45,13 +45,14 @@ function ProductPrototype() {
     }
     return this.price;
   };
-}
 
-this.buyAmountProduct = function (amountValue) {
-  if (this.productQuantity <= amountValue) {
+  this.buyAmountProduct = function (amountValue) {
+    if (this.quantity > amountValue) {
+      return (this.quantity -= amountValue);
+    }
     return null;
-  }
-};
+  };
+}
 
 Product.prototype = new ProductPrototype();
 
