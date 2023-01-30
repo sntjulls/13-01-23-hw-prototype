@@ -48,7 +48,7 @@ function ProductPrototype() {
 
   this.buyAmountProduct = function (amountValue) {
     if (this.quantity > amountValue) {
-      return (this.quantity -= amountValue);
+      return amountValue * this.price;
     }
     return null;
   };
@@ -63,5 +63,5 @@ console.log(product1.showInfo());
 console.log(product2.showInfo());
 console.log(product1.setSaleToPrice(6));
 console.log(product2.setSaleToPrice(0));
-console.log(product1.buyAmountProduct(5));
+console.log(product1.buyAmountProduct(10));
 console.log(product2.buyAmountProduct(2));
